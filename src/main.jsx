@@ -5,6 +5,7 @@ import './index.css'
 import DetailView from './routes/DetailView';
 import Layout from './routes/Layout';
 import App from './App.jsx'
+import NotFound from './routes/NotFound';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,6 +14,10 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Layout />}>
           <Route index={true} element={<App />} />
           <Route path="coin/:symbol" element={<DetailView />} />
+          <Route
+                        path="*"
+                        element={ <NotFound /> }
+                      />
         </Route>
       </Routes>
     </BrowserRouter>
